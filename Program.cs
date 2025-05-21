@@ -1,3 +1,6 @@
+using EduCenterManagerWeb.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace EduCenterManagerWeb
 {
     public class Program
@@ -8,6 +11,12 @@ namespace EduCenterManagerWeb
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            // Agregando el contexto EduCenterManagerContext a la aplicación
+            builder.Services.AddDbContext<EduCenterManagerContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("EduCenterManagerDB"))
+            );
+
 
             var app = builder.Build();
 
