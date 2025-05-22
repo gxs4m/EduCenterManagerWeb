@@ -7,9 +7,9 @@
         public string? Description { get; set; } 
         public int TeachersId { get; set; } // Llave Foranea
         public Teachers? Teachers { get; set; } // Propiedad de navegación Profesores
-        public ICollection<Students>? Students { get; set; } // Propiedad de navegación Estudiantes
-        public ICollection<Schedules>? Schedules { get; set; } // Propiedad de navegación Horarios
-        public ICollection<Ratings>? Ratings { get; set; } // Propiedad de navegación Calificaciones
+        public ICollection<Students>? Students { get; set; } = default!; // Propiedad de navegación Estudiantes
+        public ICollection<Schedules>? Schedules { get; set; } = default!;// Propiedad de navegación Horarios
+        public ICollection<Ratings>? Ratings { get; set; } = default!; // Propiedad de navegación Calificaciones
 
     }
 }

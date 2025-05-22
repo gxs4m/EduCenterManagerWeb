@@ -14,7 +14,7 @@ namespace EduCenterManagerWeb.Models
         public string? Direccion { get; set; }
         public int CoursesId { get; set; } //Llave foranea
         public Courses Courses { get; set; } //Propiedad de navegación
-        public ICollection<Ratings>? Ratings { get; set; } // Propiedad de navegación Calificaciones
+        public ICollection<Ratings>? Ratings { get; set; } = default!; // Propiedad de navegación Calificaciones
 
     }
 }
