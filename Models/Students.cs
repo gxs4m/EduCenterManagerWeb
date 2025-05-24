@@ -15,8 +15,10 @@ namespace EduCenterManagerWeb.Models
         public string? Direccion { get; set; }
         [ForeignKey("CoursesId")]
         public int CoursesId { get; set; } //Llave foranea
+
         public Courses? Courses { get; set; } //Propiedad de navegación
         public ICollection<Ratings>? Ratings { get; set; } // Propiedad de navegación Calificaciones
+
 
     }
 }
