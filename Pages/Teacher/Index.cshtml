@@ -1,0 +1,54 @@
+﻿@page
+@model EduCenterManagerWeb.Pages.Teacher.IndexModel
+@{
+	ViewData["Title"] = "Teachers";
+}
+<h1>Teachers</h1>
+<table class="table">
+	<thead>
+		<tr> 
+			<th>
+				@Html.DisplayNameFor(model => model.Teacher[0].Nombre)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Teacher[0].Apellido)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Teacher[0].Especialidad)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Teacher[0].Email)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Teacher[0].Telefono)
+			</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.Teacher)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Nombre)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Apellido)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Especialidad)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Email)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Telefono)
+				</td>
+				<td>
+					<span></span>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
