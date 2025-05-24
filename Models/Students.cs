@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EduCenterManagerWeb.Models
 {
@@ -12,8 +13,9 @@ namespace EduCenterManagerWeb.Models
         public string? Email { get; set; }
         public string? Telefono { get; set; }
         public string? Direccion { get; set; }
+        [ForeignKey("CoursesId")]
         public int CoursesId { get; set; } //Llave foranea
-        public Courses Courses { get; set; } //Propiedad de navegación
+        public Courses? Courses { get; set; } //Propiedad de navegación
         public ICollection<Ratings>? Ratings { get; set; } // Propiedad de navegación Calificaciones
 
     }
