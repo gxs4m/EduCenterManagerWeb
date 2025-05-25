@@ -116,7 +116,7 @@ namespace EduCenterManagerWeb.Migrations
                 column: "StudentsId",
                 principalTable: "Student",
                 principalColumn: "IdEstudiante",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.NoAction);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Schedule_Course_CoursesId",
@@ -238,7 +238,7 @@ namespace EduCenterManagerWeb.Migrations
                 principalColumn: "Id");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Rating_Student_StudentsIdEstudiante",
+                name: "FK_Rating_Student_IdEstudiante",
                 table: "Rating",
                 column: "StudentsIdEstudiante",
                 principalTable: "Student",
