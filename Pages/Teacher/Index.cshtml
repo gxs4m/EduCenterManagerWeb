@@ -48,6 +48,7 @@
 					@Html.DisplayFor(modelItem => item.Telefono)
 				</td>
 				<td>
+					<a asp-page="./Edit" asp-route-id="@item.IdProfesor" class="btn btn-primary">Edit</a> 
 					<a asp-page="./Delete" asp-route-id="@item.IdProfesor" class="btn btn-danger">Delete</a>
 				</td>
 			</tr>
