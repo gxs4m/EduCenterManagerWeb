@@ -5,8 +5,8 @@ namespace EduCenterManagerWeb.Models
     public class Courses
     {
         public int Id { get; set; } // Primary Key
-        public string? Name { get; set; } 
-        public string? Description { get; set; }
+        public string? NombreCurso { get; set; } 
+        public string? Descripcion { get; set; }
         [ForeignKey("TeachersId")]
         public int TeachersId { get; set; } // Llave Foranea
         public Teachers? Teachers { get; set; } // Propiedad de navegación Profesores
