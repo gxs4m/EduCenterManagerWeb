@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <Folder Include="Pages\Courses\" />
+    <Folder Include="Pages\Schedules\" />
     <Folder Include="Pages\Ratings\" />
     <Folder Include="Pages\Teachers\" />
     <Folder Include="Pages\Students\" />
