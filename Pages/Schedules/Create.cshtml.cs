@@ -29,7 +29,7 @@ namespace EduCenterManagerWeb.Pages.Schedules
         {
             if (!ModelState.IsValid || Schedule == null)
             {
-                ViewData["Courses"] = new SelectList(_context.Course, "IdCurso", "Nombre");
+                ViewData["Courses"] = new SelectList(_context.Course, "Id", "NombreCurso");
                 return Page();
             }
 
