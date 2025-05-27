@@ -1,0 +1,38 @@
+﻿@page
+@model EduCenterManagerWeb.Pages.Schedules.IndexModel
+@{
+    ViewData["Title"] = "Horarios";
+}
+
+<h1>Horarios</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Crear Nuevo Horario</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Curso</th>
+            <th>Día</th>
+            <th>Hora Inicio</th>
+            <th>Hora Fin</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ScheduleList)
+        {
+            <tr>
+                <td>@item.Courses?.NombreCurso</td> <!-- Asegúrate que el modelo Courses tenga esa propiedad -->
+                <td>@item.DiaSemana</td>
+                <td>@item.HoraInicio</td>
+                <td>@item.HoraFin</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.IdHorario" class="btn btn-warning btn-sm">Editar</a>
+                    <a asp-page="./Delete" asp-route-id="@item.IdHorario" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

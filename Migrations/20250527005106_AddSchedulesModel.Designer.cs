@@ -3,6 +3,7 @@ using EduCenterManagerWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduCenterManagerWeb.Migrations
 {
     [DbContext(typeof(EduCenterManagerContext))]
-    partial class EduCenterManagerContextModelSnapshot : ModelSnapshot
+    [Migration("20250527005106_AddSchedulesModel")]
+    partial class AddSchedulesModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
