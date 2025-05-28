@@ -12,5 +12,7 @@ namespace EduCenterManagerWeb.Models
         public Courses? Courses { get; set; } // Propiedad de navegación Cursos
         public int Nota { get; set; } 
         public string? Fecha { get; set; } 
+
+        public int? Id { get; set; } // Foreign key for the Rating table, if needed
     }
 }

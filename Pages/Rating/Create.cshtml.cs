@@ -1,10 +1,10 @@
-using EduCenterManagerWeb.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using EduCenterManagerWeb.Data;
 using EduCenterManagerWeb.Models;
 
-
-namespace EduCenterManagerWeb.Pages.Student
+namespace EduCenterManagerWeb.Pages.Rating
 {
     public class CreateModel : PageModel
     {
@@ -15,26 +15,26 @@ namespace EduCenterManagerWeb.Pages.Student
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public  IActionResult OnGet()
         {
             return Page();
         }
 
         [BindProperty]
-        public Students Students { get; set; } = default!;
+
+        public Ratings Ratings { get; set; } = default!;
+
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Student == null || Students == null)
+            if (!ModelState.IsValid || _context.Rating == null || Ratings == null)
             {
                 return Page();
             }
-            _context.Student.Add(Students);
+
+            _context.Rating.Add(Ratings);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
     }
-    
-} 
-
-
+}
