@@ -1,0 +1,51 @@
+﻿@page
+@model EduCenterManagerWeb.Pages.Rating.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Ratings</h4>
+<hr />
+<div class="col-md-4">
+    <form method="post">
+        <div asp-validation-simmary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Ratings.IdCalificacion" class="control-label"></label>
+            <input asp-for="Ratings.IdCalificacion" class="form-control" />
+            <span asp-validation-for="Ratings.IdCalificacion" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ratings.StudentsId" class="control-label"></label>
+            <input asp-for="Ratings.StudentsId" class="form-control" />
+            <span asp-validation-for="Ratings.StudentsId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ratings.CoursesId" class="control-label"></label>
+            <input asp-for="Ratings.CoursesId" class="form-control" />
+            <span asp-validation-for="Ratings.CoursesId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ratings.Nota" class="control-label"></label>
+            <input asp-for="Ratings.Nota" class="form-control" />
+            <span asp-validation-for="Ratings.Nota" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ratings.Fecha" class="control-label"></label>
+            <input asp-for="Ratings.Fecha" class="form-control" />
+            <span asp-validation-for="Ratings.Fecha" class="text-danger"></span>
+        </div>
+        <div class="form-group mt-3">
+            <input type="submit" value="Create" class="btn btn-success" />
+            <a asp-page="./Index" class="btn btn-primary">Back to List</a>
+        </div>
+    </form>
+  </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
