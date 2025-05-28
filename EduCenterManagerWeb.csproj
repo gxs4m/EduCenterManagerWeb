@@ -7,6 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Courses\**" />
+    <Compile Remove="Pages\Ratings\**" />
+    <Compile Remove="Pages\Students\**" />
+    <Compile Remove="Pages\Teachers\**" />
+    <Content Remove="Pages\Courses\**" />
+    <Content Remove="Pages\Ratings\**" />
+    <Content Remove="Pages\Students\**" />
+    <Content Remove="Pages\Teachers\**" />
+    <EmbeddedResource Remove="Pages\Courses\**" />
+    <EmbeddedResource Remove="Pages\Ratings\**" />
+    <EmbeddedResource Remove="Pages\Students\**" />
+    <EmbeddedResource Remove="Pages\Teachers\**" />
+    <None Remove="Pages\Courses\**" />
+    <None Remove="Pages\Ratings\**" />
+    <None Remove="Pages\Students\**" />
+    <None Remove="Pages\Teachers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.5">
       <PrivateAssets>all</PrivateAssets>
@@ -18,5 +37,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
+
 
 </Project>
