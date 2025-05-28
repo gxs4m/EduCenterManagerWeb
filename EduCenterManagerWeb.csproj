@@ -7,9 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Courses\**" />
+    <Compile Remove="Pages\Ratings\**" />
+    <Compile Remove="Pages\Students\**" />
     <Compile Remove="Pages\Teachers\**" />
+    <Content Remove="Pages\Courses\**" />
+    <Content Remove="Pages\Ratings\**" />
+    <Content Remove="Pages\Students\**" />
     <Content Remove="Pages\Teachers\**" />
+    <EmbeddedResource Remove="Pages\Courses\**" />
+    <EmbeddedResource Remove="Pages\Ratings\**" />
+    <EmbeddedResource Remove="Pages\Students\**" />
     <EmbeddedResource Remove="Pages\Teachers\**" />
+    <None Remove="Pages\Courses\**" />
+    <None Remove="Pages\Ratings\**" />
+    <None Remove="Pages\Students\**" />
     <None Remove="Pages\Teachers\**" />
   </ItemGroup>
 
@@ -27,11 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Courses\" />
     <Folder Include="Pages\Schedules\" />
-    <Folder Include="Pages\Ratings\" />
-    <Folder Include="Pages\Teachers\" />
-    <Folder Include="Pages\Students\" />
   </ItemGroup>
 
 </Project>
