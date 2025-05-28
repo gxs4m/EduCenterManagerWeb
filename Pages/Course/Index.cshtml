@@ -4,24 +4,26 @@
     ViewData["Title"] = "Index de Cursos";
 }
 <h1>Lista de Cursos</h1>
-
+<p>
+    <a asp-page="./Create" class="btn btn-primary">Crear Nuevo Curso</a>
+</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Courses[0].NombreCurso)
+                @Html.DisplayNameFor(model => model.course[0].NombreCurso)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Courses[0].Descripcion)
+                @Html.DisplayNameFor(model => model.course[0].Descripcion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Courses[0].Teachers)
+                @Html.DisplayNameFor(model => model.course[0].TeachersId)
             </th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Courses)
+        @foreach (var item in Model.course)
         {
             <tr>
                 <td>
@@ -31,10 +33,14 @@
                     @Html.DisplayFor(modelItem => item.Descripcion)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Teachers)
+                    @Html.DisplayFor(modelItem => item.TeachersId)
                 </td>
-                <td></td>
-                <td></td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a>
+                    
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
+                </td>
+                
             </tr>
         }
     </tbody>

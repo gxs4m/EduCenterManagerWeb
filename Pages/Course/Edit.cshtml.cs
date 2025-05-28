@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
 
 namespace EduCenterManagerWeb.Pages.Course
 {
@@ -26,28 +27,22 @@ namespace EduCenterManagerWeb.Pages.Course
                 return NotFound();
             }
 
-            var course = await _context.Course
-                .Include(c => c.Teachers) // Incluimos Teachers para poder mostrar su nombre en la vista de edición si es necesario.
-                .FirstOrDefaultAsync(m => m.Id == id);
-
+            var course = await _context.Course.FirstOrDefaultAsync(m => m.Id == id);
             if (course == null)
             {
                 return NotFound();
             }
-
             Course = course;
             return Page();
-        }
 
+        }
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-
             _context.Attach(Course).State = EntityState.Modified;
-
             try
             {
                 await _context.SaveChangesAsync();
@@ -63,13 +58,14 @@ namespace EduCenterManagerWeb.Pages.Course
                     throw;
                 }
             }
-
             return RedirectToPage("./Index");
         }
 
+
+
         private bool CourseExists(int id)
         {
-            return (_context.Course?.Any(e => e.Id == id)).GetValueOrDefault();
+            return _context.Course.Any(e => e.Id == id);
         }
     }
 }

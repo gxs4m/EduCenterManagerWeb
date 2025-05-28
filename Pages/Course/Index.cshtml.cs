@@ -1,10 +1,9 @@
 using EduCenterManagerWeb.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using EduCenterManagerWeb.Models;
 
 namespace EduCenterManagerWeb.Pages.Course
 {
@@ -15,14 +14,13 @@ namespace EduCenterManagerWeb.Pages.Course
         {
             _context = context;
         }
-        public IList<Models.Courses> Courses { get; set; } = default!;
-        public async Task OnGet()
+        public IList<Courses> course { get; set; } = default!;
+        
+        public async Task OnGetAsync()
         {
             if (_context.Course != null)
             {
-                Courses = await _context.Course
-                    .Include(c => c.Teachers) 
-                    .ToListAsync();
+                course = await _context.Course.ToListAsync();
             }
         }
     }

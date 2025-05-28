@@ -20,6 +20,10 @@
                 <input asp-for="Course.Descripcion" class="form-control" />
                 <span asp-validation-for="Course.Descripcion" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="Course.TeachersId" class="control-label"></label>
+                <input asp-for="Course.TeachersId" class="form-control" />
+                <span asp-validation-for="Course.TeachersId" class="text-danger"></span>
             <div class="form-group mt-3">
                 <input type="submit" value="Crear" class="btn btn-primary" /> &nbsp;
                 <a asp-page="./Index" class="btn btn-secondary">Volver a la lista</a>
