@@ -27,7 +27,7 @@ namespace EduCenterManagerWeb.Pages.Rating
             {
                 return NotFound();
             }
-            var ratings = await _context.Rating.FirstOrDefaultAsync(m => m.Id == id);
+            var ratings = await _context.Rating.FirstOrDefaultAsync(m => m.IdCalificacion == id);
             if (ratings == null)
             {
                 return NotFound();
@@ -51,7 +51,7 @@ namespace EduCenterManagerWeb.Pages.Rating
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!RatingsExists(Ratings.Id))
+                if (!RatingsExists(Ratings.IdCalificacion))
                 {
                     return NotFound();
                 }
@@ -66,7 +66,7 @@ namespace EduCenterManagerWeb.Pages.Rating
 
         private bool RatingsExists(int? id)
         {
-            return (_context.Rating?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Rating?.Any(e => e.IdCalificacion == id)).GetValueOrDefault();
         }
     }
 }

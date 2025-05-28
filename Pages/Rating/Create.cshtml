@@ -12,11 +12,6 @@
     <form method="post">
         <div asp-validation-simmary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="Ratings.IdCalificacion" class="control-label"></label>
-            <input asp-for="Ratings.IdCalificacion" class="form-control" />
-            <span asp-validation-for="Ratings.IdCalificacion" class="text-danger"></span>
-        </div>
-        <div class="form-group">
             <label asp-for="Ratings.StudentsId" class="control-label"></label>
             <input asp-for="Ratings.StudentsId" class="form-control" />
             <span asp-validation-for="Ratings.StudentsId" class="text-danger"></span>
@@ -42,7 +37,7 @@
         </div>
     </form>
   </div>
-</div>
+
 
 @section Scripts {
     @{
