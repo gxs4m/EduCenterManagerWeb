@@ -38,8 +38,5 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\Schedules\" />
-  </ItemGroup>
 
 </Project>
