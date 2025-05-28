@@ -1,0 +1,77 @@
+﻿@page
+@model EduCenterManagerWeb.Pages.Rating.IndexModel
+@{
+    ViewData["Title"] = "Index Ratings";
+}
+<h1>Index Ratings</h1>
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating[0].IdCalificacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating[0].StudentsId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating[0].CoursesId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating[0].Nota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating[0].Fecha)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Rating)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdCalificacion)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentsId)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CoursesId)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nota)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+                <td>
+                 <span></span>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
