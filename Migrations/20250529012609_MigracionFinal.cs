@@ -5,7 +5,7 @@
 namespace EduCenterManagerWeb.Migrations
 {
     /// <inheritdoc />
-    public partial class Resoluciondeerrores : Migration
+    public partial class MigracionFinal : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

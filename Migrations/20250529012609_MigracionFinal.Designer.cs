@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduCenterManagerWeb.Migrations
 {
     [DbContext(typeof(EduCenterManagerContext))]
-    [Migration("20250528035048_Prueba3")]
-    partial class Prueba3
+    [Migration("20250529012609_MigracionFinal")]
+    partial class MigracionFinal
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

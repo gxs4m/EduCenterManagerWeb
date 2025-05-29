@@ -59,9 +59,6 @@ namespace EduCenterManagerWeb.Migrations
                     b.Property<string>("Fecha")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Id")
-                        .HasColumnType("int");
-
                     b.Property<int>("Nota")
                         .HasColumnType("int");
 
@@ -166,6 +163,20 @@ namespace EduCenterManagerWeb.Migrations
                     b.HasKey("IdProfesor");
 
                     b.ToTable("Teacher");
+                });
+
+            modelBuilder.Entity("EduCenterManagerWeb.Models.User", b =>
+                {
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Email");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("EduCenterManagerWeb.Models.Courses", b =>

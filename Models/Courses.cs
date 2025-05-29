@@ -1,11 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EduCenterManagerWeb.Models
 {
     public class Courses
     {
+        [Key]
         public int Id { get; set; } // Primary Key
-        public string? NombreCurso { get; set; } 
+        public string? NombreCurso { get; set; }
         public string? Descripcion { get; set; }
         [ForeignKey("TeachersId")]
         public int TeachersId { get; set; } // Llave Foranea

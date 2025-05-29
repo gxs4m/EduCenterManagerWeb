@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduCenterManagerWeb.Migrations
 {
     [DbContext(typeof(EduCenterManagerContext))]
-    [Migration("20250527005106_AddSchedulesModel")]
-    partial class AddSchedulesModel
+    [Migration("20250529013112_modelfinal")]
+    partial class modelfinal
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -166,6 +166,20 @@ namespace EduCenterManagerWeb.Migrations
                     b.HasKey("IdProfesor");
 
                     b.ToTable("Teacher");
+                });
+
+            modelBuilder.Entity("EduCenterManagerWeb.Models.User", b =>
+                {
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Email");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("EduCenterManagerWeb.Models.Courses", b =>
