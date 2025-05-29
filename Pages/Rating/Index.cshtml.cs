@@ -1,5 +1,6 @@
 using EduCenterManagerWeb.Data;
 using EduCenterManagerWeb.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace EduCenterManagerWeb.Pages.Rating
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly EduCenterManagerContext _context;

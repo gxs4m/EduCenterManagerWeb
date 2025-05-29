@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using EduCenterManagerWeb.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EduCenterManagerWeb.Pages.Course
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly EduCenterManagerContext _context;

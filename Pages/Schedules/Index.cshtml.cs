@@ -1,9 +1,11 @@
 using EduCenterManagerWeb.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 namespace EduCenterManagerWeb.Pages.Schedules
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly EduCenterManagerContext _context;

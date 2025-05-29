@@ -1,11 +1,13 @@
+using EduCenterManagerWeb.Data;
+using EduCenterManagerWeb.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using EduCenterManagerWeb.Models;
-using EduCenterManagerWeb.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace EduCenterManagerWeb.Pages.Teacher
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly EduCenterManagerContext _context;
