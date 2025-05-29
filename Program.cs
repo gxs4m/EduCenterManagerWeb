@@ -12,6 +12,12 @@ namespace EduCenterManagerWeb
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+                {
+                    options.Cookie.Name = "MyCookieAuth";
+                    options.LoginPath = "/Account/Login"; // Ruta de inicio de sesión
+                });
+
             // Agregando el contexto EduCenterManagerContext a la aplicación
             builder.Services.AddDbContext<EduCenterManagerContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("EduCenterManagerDB"))
