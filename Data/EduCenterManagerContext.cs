@@ -13,6 +13,7 @@ namespace EduCenterManagerWeb.Data
         public DbSet<Teachers> Teacher { get; set; }
         public DbSet<Schedules> Schedule { get; set; }
         public DbSet<Ratings> Rating { get; set; }
+        public DbSet<User> Users { get; set; }
 
     }
 }

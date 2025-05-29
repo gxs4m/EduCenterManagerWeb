@@ -3,6 +3,7 @@ using EduCenterManagerWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduCenterManagerWeb.Migrations
 {
     [DbContext(typeof(EduCenterManagerContext))]
-    partial class EduCenterManagerContextModelSnapshot : ModelSnapshot
+    [Migration("20250529012609_MigracionFinal")]
+    partial class MigracionFinal
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -163,20 +166,6 @@ namespace EduCenterManagerWeb.Migrations
                     b.HasKey("IdProfesor");
 
                     b.ToTable("Teacher");
-                });
-
-            modelBuilder.Entity("EduCenterManagerWeb.Models.User", b =>
-                {
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Email");
-
-                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("EduCenterManagerWeb.Models.Courses", b =>

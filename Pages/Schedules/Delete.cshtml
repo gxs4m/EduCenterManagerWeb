@@ -1,0 +1,31 @@
+﻿@page
+@model EduCenterManagerWeb.Pages.Schedules.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Horario";
+}
+
+<h1>Eliminar Horario</h1>
+
+<h3>¿Estás seguro que deseas eliminar este horario?</h3>
+
+<div>
+    <h4>Horario</h4>
+    <dl class="row">
+        <dt class="col-sm-2">Curso</dt>
+        <dd class="col-sm-10">@Model.Schedule.Courses?.NombreCurso</dd>
+
+        <dt class="col-sm-2">Día</dt>
+        <dd class="col-sm-10">@Model.Schedule.DiaSemana</dd>
+
+        <dt class="col-sm-2">Hora Inicio</dt>
+        <dd class="col-sm-10">@Model.Schedule.HoraInicio</dd>
+
+        <dt class="col-sm-2">Hora Fin</dt>
+        <dd class="col-sm-10">@Model.Schedule.HoraFin</dd>
+    </dl>
+
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-page="./Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+﻿@page "{id:int}"
+@model EduCenterManagerWeb.Pages.Schedules.EditModel
+@{
+    ViewData["Title"] = "Editar Horario";
+}
+
+<h1>Editar Horario</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Schedule.IdHorario" />
+
+    <div class="form-group">
+        <label asp-for="Schedule.CoursesId" class="control-label">Curso</label>
+        <select asp-for="Schedule.CoursesId" class="form-control"
+                asp-items="@(ViewData["Course"] as SelectList)">
+            <option value="">Seleccione un curso</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Schedule.DiaSemana" class="control-label">Día de la semana</label>
+        <input asp-for="Schedule.DiaSemana" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Schedule.HoraInicio" class="control-label">Hora de inicio</label>
+        <input asp-for="Schedule.HoraInicio" type="time" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Schedule.HoraFin" class="control-label">Hora de fin</label>
+        <input asp-for="Schedule.HoraFin" type="time" class="form-control" />
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    <a asp-page="./Index" class="btn btn-secondary">Cancelar</a>
+</form>
