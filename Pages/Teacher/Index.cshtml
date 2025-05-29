@@ -1,0 +1,58 @@
+﻿@page
+@model EduCenterManagerWeb.Pages.Teacher.IndexModel
+@{
+	ViewData["Title"] = "Teachers";
+}
+<h1>Teachers</h1>
+<p>
+	<a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+	<thead>
+		<tr> 
+			<th>
+				@Html.DisplayNameFor(model => model.Teacher[0].Nombre)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Teacher[0].Apellido)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Teacher[0].Especialidad)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Teacher[0].Email)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Teacher[0].Telefono)
+			</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.Teacher)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Nombre)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Apellido)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Especialidad)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Email)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Telefono)
+				</td>
+				<td>
+					<a asp-page="./Edit" asp-route-id="@item.IdProfesor" class="btn btn-primary">Edit</a> 
+					<a asp-page="./Delete" asp-route-id="@item.IdProfesor" class="btn btn-danger">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+

@@ -1,0 +1,35 @@
+﻿@page
+@model EduCenterManagerWeb.Pages.Course.EditModel
+@{
+    ViewData["Title"] = "Edit Course";
+}
+<h1>Editar Curso</h1>
+<h4>Curso</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Course.Id" />
+            <div class="form-group">
+                <label asp-for="Course.NombreCurso" class="control-label"></label>
+                <input asp-for="Course.NombreCurso" class="form-control" />
+                <span asp-validation-for="Course.NombreCurso" class="text-danger"></span>
+            </div>
+            <div class=" form-group">
+                <label asp-for="Course.Descripcion" class="control-label"></label>
+                <input asp-for="Course.Descripcion" class="form-control" />
+                <span asp-validation-for="Course.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3"
+                <input type="submit" value="Guardar" class="btn btn-success" />  
+                <a asp-page="./Index" class="btn btn-primary">Volver a la lista</a>
+                </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{ 
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
