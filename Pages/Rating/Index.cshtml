@@ -12,9 +12,6 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Rating[0].IdCalificacion)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Rating[0].StudentsId)
             </th>
             <th>
@@ -33,43 +30,22 @@
         @foreach (var item in Model.Rating)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdCalificacion)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-                </td>
+                
                 <td>
                     @Html.DisplayFor(modelItem => item.StudentsId)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.CoursesId)
                 </td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Nota)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Fecha)
                 </td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-                </td>
-                <td>
-                 <span></span>
+                    <a asp-page="./Edit" asp-route-id="@item.IdCalificacion" class="btn btn-primary">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.IdCalificacion" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
         }

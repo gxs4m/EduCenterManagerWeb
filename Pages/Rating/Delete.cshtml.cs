@@ -26,7 +26,7 @@ namespace EduCenterManagerWeb.Pages.Rating
             {
                 return NotFound();
             }
-            var ratings = await _context.Rating.FirstOrDefaultAsync(m => m.Id == id);
+            var ratings = await _context.Rating.FirstOrDefaultAsync(m => m.IdCalificacion == id);
 
             if (ratings == null)
             {
